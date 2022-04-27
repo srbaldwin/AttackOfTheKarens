@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32407.343
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AttackOfTheKarens", "AttackOfTheKarens\AttackOfTheKarens.csproj", "{74E00D5B-1A10-4E69-97DB-B20BB49BFE7E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{74E00D5B-1A10-4E69-97DB-B20BB49BFE7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74E00D5B-1A10-4E69-97DB-B20BB49BFE7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74E00D5B-1A10-4E69-97DB-B20BB49BFE7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74E00D5B-1A10-4E69-97DB-B20BB49BFE7E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BA3221C9-F0C8-4770-AD97-91AF7666BB51}
+	EndGlobalSection
+EndGlobal

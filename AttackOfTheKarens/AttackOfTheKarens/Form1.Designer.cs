@@ -1,0 +1,65 @@
+﻿namespace AttackOfTheKarens {
+  partial class Form1 {
+    /// <summary>
+    ///  Required designer variable.
+    /// </summary>
+    private System.ComponentModel.IContainer components = null;
+
+    /// <summary>
+    ///  Clean up any resources being used.
+    /// </summary>
+    /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+    protected override void Dispose(bool disposing) {
+      if (disposing && (components != null)) {
+        components.Dispose();
+      }
+      base.Dispose(disposing);
+    }
+
+    #region Windows Form Designer generated code
+
+    /// <summary>
+    ///  Required method for Designer support - do not modify
+    ///  the contents of this method with the code editor.
+    /// </summary>
+    private void InitializeComponent() {
+      this.components = new System.ComponentModel.Container();
+      this.panMall = new System.Windows.Forms.Panel();
+      this.tmrKarenSpawner = new System.Windows.Forms.Timer(this.components);
+      this.SuspendLayout();
+      // 
+      // panMall
+      // 
+      this.panMall.BackColor = System.Drawing.Color.Transparent;
+      this.panMall.Location = new System.Drawing.Point(12, 12);
+      this.panMall.Name = "panMall";
+      this.panMall.Size = new System.Drawing.Size(561, 539);
+      this.panMall.TabIndex = 0;
+      // 
+      // tmrKarenSpawner
+      // 
+      this.tmrKarenSpawner.Tick += new System.EventHandler(this.tmrKarenSpawner_Tick);
+      // 
+      // Form1
+      // 
+      this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+      this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+      this.BackColor = System.Drawing.Color.Black;
+      this.BackgroundImage = global::AttackOfTheKarens.Properties.Resources.karen;
+      this.ClientSize = new System.Drawing.Size(984, 698);
+      this.Controls.Add(this.panMall);
+      this.Name = "Form1";
+      this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+      this.Text = "Attack of the Karens!!";
+      this.Load += new System.EventHandler(this.Form1_Load);
+      this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyUp);
+      this.ResumeLayout(false);
+
+    }
+
+    #endregion
+
+    private System.Windows.Forms.Panel panMall;
+    private System.Windows.Forms.Timer tmrKarenSpawner;
+  }
+}
