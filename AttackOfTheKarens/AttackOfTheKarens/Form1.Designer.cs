@@ -1,5 +1,5 @@
 ﻿namespace AttackOfTheKarens {
-  partial class Form1 {
+  partial class FrmMall {
     /// <summary>
     ///  Required designer variable.
     /// </summary>
@@ -40,18 +40,20 @@
       // 
       this.tmrKarenSpawner.Tick += new System.EventHandler(this.tmrKarenSpawner_Tick);
       // 
-      // Form1
+      // FrmMall
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.BackColor = System.Drawing.Color.Black;
-      this.BackgroundImage = global::AttackOfTheKarens.Properties.Resources.karen;
+      this.BackgroundImage = global::AttackOfTheKarens.Properties.Resources.mall_bg;
+      this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
       this.ClientSize = new System.Drawing.Size(984, 698);
       this.Controls.Add(this.panMall);
-      this.Name = "Form1";
+      this.Name = "FrmMall";
       this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
       this.Text = "Attack of the Karens!!";
-      this.Load += new System.EventHandler(this.Form1_Load);
+      this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmMall_FormClosed);
+      this.Load += new System.EventHandler(this.FrmMall_Load);
       this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyUp);
       this.ResumeLayout(false);
 

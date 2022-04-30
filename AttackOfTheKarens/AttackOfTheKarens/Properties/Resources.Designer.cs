@@ -163,9 +163,29 @@ namespace AttackOfTheKarens.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap karen1 {
+        internal static System.Drawing.Bitmap karen_bg {
             get {
-                object obj = ResourceManager.GetObject("karen1", resourceCulture);
+                object obj = ResourceManager.GetObject("karen_bg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] karen_music {
+            get {
+                object obj = ResourceManager.GetObject("karen_music", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap mall_bg {
+            get {
+                object obj = ResourceManager.GetObject("mall_bg", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -176,6 +196,16 @@ namespace AttackOfTheKarens.Properties {
         internal static System.Drawing.Bitmap owner {
             get {
                 object obj = ResourceManager.GetObject("owner", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap title {
+            get {
+                object obj = ResourceManager.GetObject("title", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

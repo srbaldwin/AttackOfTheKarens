@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 
 namespace AttackOfTheKarens.code {
   public class Karen {
@@ -14,6 +9,7 @@ namespace AttackOfTheKarens.code {
 
     public Karen(PictureBox pic) {
       this.pic = pic;
+      this.pic.Visible = false;
       this.isPresent = false;
     }
   }
