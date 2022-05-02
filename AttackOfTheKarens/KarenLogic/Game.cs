@@ -1,12 +1,17 @@
 ﻿using System.Collections.Generic;
 using System.Windows.Forms;
 
-namespace AttackOfTheKarens {
-  public static class Globals {
+namespace KarenLogic {
+  public static class Game {
+    public static float Score { get; set; }
     public static List<Form> openForms;
 
-    static Globals() {
+    static Game() {
       openForms = new List<Form>(); 
+    }
+
+    public static void AddToScore(float amount) {
+      Score += amount;
     }
 
     public static void CloseAll() {

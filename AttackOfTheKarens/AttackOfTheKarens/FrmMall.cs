@@ -1,17 +1,17 @@
-﻿using System;
+﻿using KarenLogic;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
-using System.Windows.Forms;
 using System.Linq;
 using System.Media;
-using KarenLogic;
+using System.Windows.Forms;
 
 namespace AttackOfTheKarens {
   public partial class FrmMall : Form {
     // consts
     private const int PANEL_PADDING = 10;
-    private const int FORM_PADDING = 30;
+    private const int FORM_PADDING = 60;
     private const int CELL_SIZE = 64;
     private readonly Random rand = new Random();
     private readonly Color[] colors = new Color[5] { Color.Red, Color.Green, Color.Blue, Color.Orange, Color.Yellow };
@@ -26,7 +26,7 @@ namespace AttackOfTheKarens {
 
     // ctor
     public FrmMall() {
-      Globals.openForms.Add(this);
+      Game.openForms.Add(this);
       InitializeComponent();
     }
 
@@ -103,8 +103,12 @@ namespace AttackOfTheKarens {
       picOwner.BringToFront();
       panMall.Width = CELL_SIZE * map[0].Length + PANEL_PADDING;
       panMall.Height = CELL_SIZE * map.Length + PANEL_PADDING;
-      this.Width = panMall.Width + FORM_PADDING;
+      this.Width = panMall.Width + FORM_PADDING + 75;
       this.Height = panMall.Height + FORM_PADDING;
+      lblMoneySaved.Left = this.Width - lblMoneySaved.Width - 10;
+      lblMoneySavedLabel.Left = this.Width - lblMoneySavedLabel.Width - 10;
+      lblMoneySavedLabel.Top = 0;
+      lblMoneySaved.Top = lblMoneySavedLabel.Height + 5;
     }
 
     private void FrmMall_Load(object sender, EventArgs e) {
@@ -123,7 +127,7 @@ namespace AttackOfTheKarens {
     }
 
     private bool IsWalkable(int newRow, int newCol) {
-      char[] walkableTiles = new char[] { ' ', 'o', 'K','0','1','2','3','4','5','6','7','8','9','L' };
+      char[] walkableTiles = new char[] { ' ', 'o', 'K', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'L' };
       return walkableTiles.Contains(map[newRow][newCol]);
     }
 
@@ -183,8 +187,8 @@ namespace AttackOfTheKarens {
     }
 
     private void FrmMall_FormClosed(object sender, FormClosedEventArgs e) {
-      Globals.openForms.Remove(this);
-      Globals.CloseAll();
+      Game.openForms.Remove(this);
+      Game.CloseAll();
     }
 
     private void tmrUpdateKarens_Tick(object sender, EventArgs e) {
@@ -198,6 +202,10 @@ namespace AttackOfTheKarens {
     private void tmrMoveOwner_Tick(object sender, EventArgs e) {
       Direction dir = (Direction)rand.Next(4);
       Move(dir);
+    }
+
+    private void tmrUpdateGame_Tick(object sender, EventArgs e) {
+      lblMoneySaved.Text = Game.Score.ToString("$ #,##0.00");
     }
   }
 }
