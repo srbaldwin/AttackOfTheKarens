@@ -1,11 +1,11 @@
-﻿using AttackOfTheKarens.code;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 using System.Linq;
 using System.Media;
+using KarenLogic;
 
 namespace AttackOfTheKarens {
   public partial class FrmMall : Form {
@@ -123,7 +123,7 @@ namespace AttackOfTheKarens {
     }
 
     private bool IsWalkable(int newRow, int newCol) {
-      char[] walkableTiles = new char[] { ' ', 'o', 'K' };
+      char[] walkableTiles = new char[] { ' ', 'o', 'K','0','1','2','3','4','5','6','7','8','9','L' };
       return walkableTiles.Contains(map[newRow][newCol]);
     }
 
@@ -138,17 +138,37 @@ namespace AttackOfTheKarens {
       }
       return (IsInBounds(newRow, newCol) && IsWalkable(newRow, newCol));
     }
-    
+
     private new void Move(Direction dir) {
       if (CanMove(dir, out int newRow, out int newCol)) {
         yOwner = newRow;
         xOwner = newCol;
         picOwner.Top = yOwner * CELL_SIZE;
         picOwner.Left = xOwner * CELL_SIZE;
+        char mapTile = map[newRow][newCol];
+        switch (mapTile) {
+          case '0':
+          case '1':
+          case '2':
+          case '3':
+          case '4':
+          case '5':
+          case '6':
+          case '7':
+          case '8':
+          case '9':
+            stores[int.Parse(mapTile.ToString())].OwnerWalksIn();
+            break;
+          case 'L':
+            foreach (Store store in stores) {
+              store.ResetOwner();
+            }
+            break;
+        }
       }
     }
 
-    private void Form1_KeyUp(object sender, KeyEventArgs e) {
+    private void FrmMall_KeyUp(object sender, KeyEventArgs e) {
       switch (e.KeyCode) {
         case Keys.Up: Move(Direction.UP); break;
         case Keys.Down: Move(Direction.DOWN); break;
@@ -165,6 +185,19 @@ namespace AttackOfTheKarens {
     private void FrmMall_FormClosed(object sender, FormClosedEventArgs e) {
       Globals.openForms.Remove(this);
       Globals.CloseAll();
+    }
+
+    private void tmrUpdateKarens_Tick(object sender, EventArgs e) {
+      if (stores != null && stores.Count > 0) {
+        foreach (Store store in stores) {
+          store.Update();
+        }
+      }
+    }
+
+    private void tmrMoveOwner_Tick(object sender, EventArgs e) {
+      Direction dir = (Direction)rand.Next(4);
+      Move(dir);
     }
   }
 }

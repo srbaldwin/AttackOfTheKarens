@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace AttackOfTheKarens {
   public partial class FrmTitle : Form {
-    SoundPlayer player;
+    SoundPlayer? player;
     public FrmTitle() {
       InitializeComponent();
     }
@@ -24,7 +24,7 @@ namespace AttackOfTheKarens {
     }
 
     private void btnStart_Click(object sender, EventArgs e) {
-      player.Stop();
+      player?.Stop();
       FrmMall frmMall = new FrmMall();
       frmMall.Show();
       this.Hide();

@@ -26,6 +26,8 @@
       this.components = new System.ComponentModel.Container();
       this.panMall = new System.Windows.Forms.Panel();
       this.tmrKarenSpawner = new System.Windows.Forms.Timer(this.components);
+      this.tmrUpdateKarens = new System.Windows.Forms.Timer(this.components);
+      this.tmrMoveOwner = new System.Windows.Forms.Timer(this.components);
       this.SuspendLayout();
       // 
       // panMall
@@ -39,6 +41,18 @@
       // tmrKarenSpawner
       // 
       this.tmrKarenSpawner.Tick += new System.EventHandler(this.tmrKarenSpawner_Tick);
+      // 
+      // tmrUpdateKarens
+      // 
+      this.tmrUpdateKarens.Enabled = true;
+      this.tmrUpdateKarens.Interval = 40;
+      this.tmrUpdateKarens.Tick += new System.EventHandler(this.tmrUpdateKarens_Tick);
+      // 
+      // tmrMoveOwner
+      // 
+      this.tmrMoveOwner.Enabled = true;
+      this.tmrMoveOwner.Interval = 120;
+      this.tmrMoveOwner.Tick += new System.EventHandler(this.tmrMoveOwner_Tick);
       // 
       // FrmMall
       // 
@@ -54,7 +68,7 @@
       this.Text = "Attack of the Karens!!";
       this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmMall_FormClosed);
       this.Load += new System.EventHandler(this.FrmMall_Load);
-      this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyUp);
+      this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.FrmMall_KeyUp);
       this.ResumeLayout(false);
 
     }
@@ -63,5 +77,7 @@
 
     private System.Windows.Forms.Panel panMall;
     private System.Windows.Forms.Timer tmrKarenSpawner;
+    private System.Windows.Forms.Timer tmrUpdateKarens;
+    private System.Windows.Forms.Timer tmrMoveOwner;
   }
 }
