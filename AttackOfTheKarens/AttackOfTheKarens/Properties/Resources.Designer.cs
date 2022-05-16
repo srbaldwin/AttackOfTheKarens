@@ -219,5 +219,11 @@ namespace AttackOfTheKarens.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        internal static System.Drawing.Bitmap stair {
+            get {
+                object obj = ResourceManager.GetObject("stair", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
