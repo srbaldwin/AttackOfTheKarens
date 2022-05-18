@@ -32,6 +32,7 @@
             this.lblMoneySavedLabel = new System.Windows.Forms.Label();
             this.tmrUpdateGame = new System.Windows.Forms.Timer(this.components);
             this.btnChange = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // panMall
@@ -92,13 +93,25 @@
             // 
             this.btnChange.AutoSize = true;
             this.btnChange.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnChange.Location = new System.Drawing.Point(1005, 646);
+            this.btnChange.Location = new System.Drawing.Point(1005, 528);
             this.btnChange.Name = "btnChange";
             this.btnChange.Size = new System.Drawing.Size(154, 40);
             this.btnChange.TabIndex = 3;
-            this.btnChange.Text = "Change Map";
+            this.btnChange.Text = "Up";
             this.btnChange.UseVisualStyleBackColor = true;
             this.btnChange.Click += new System.EventHandler(this.btn_Click);
+            // 
+            // button1
+            // 
+            this.button1.AutoSize = true;
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button1.Location = new System.Drawing.Point(1005, 586);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(154, 40);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "Down";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // FrmMall
             // 
@@ -106,7 +119,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1171, 698);
+            this.ClientSize = new System.Drawing.Size(1172, 697);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnChange);
             this.Controls.Add(this.lblMoneySavedLabel);
             this.Controls.Add(this.lblMoneySaved);
@@ -133,5 +147,6 @@
     private System.Windows.Forms.Label lblMoneySavedLabel;
     private System.Windows.Forms.Timer tmrUpdateGame;
     private System.Windows.Forms.Button btnChange;
+        private System.Windows.Forms.Button button1;
     }
 }

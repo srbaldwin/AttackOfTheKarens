@@ -14,6 +14,15 @@ namespace KarenLogic {
       Score += amount;
     }
 
+        public static float GetScore()
+        {
+            return Score;
+        }
+
+        public static void SubScore(float amount) { 
+            Score -= amount;
+        }
+
     public static void CloseAll() {
       for (int i = 0; i < openForms.Count; i++) {
         openForms[i].Close();
